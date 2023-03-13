@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Cliente from "../Component/Cliente";
 
 export function loader(){
 
@@ -8,7 +9,7 @@ export function loader(){
         nombre: 'Juan',
         telefono: 102013313,
         email: "juan@juan.com",
-        empresa: 'Codigo Con Juan'
+        empresa: 'Codigo Con Juan' 
     },
     {
         id: 2,
@@ -64,11 +65,9 @@ const Index = () => {
         </thead>
         <tbody>
           {clientes.map( cliente => (
-            <tr className="p-5 ">
-              <td>
-                {cliente.nombre}
-              </td>
-            </tr>
+           <Cliente
+           cliente={cliente}
+           key={cliente.id}/>
           ))}
             <tr>
 
